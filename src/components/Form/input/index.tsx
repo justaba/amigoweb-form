@@ -26,7 +26,10 @@ const Input: React.FC<IProps> = ({
     if (pattern.test(value)) {
       handleInput(name, value);
       setError(false);
-    } else setError(true);
+    } else {
+      handleInput(name, '');
+      setError(true)
+    };
   };
   return (
     <div className="input">
